@@ -1,17 +1,19 @@
-import csv
 import uuid
+from html.parser import HTMLParser
 
 
 class Transaction:
-    def __init__(self, date, store, amount, balance):
+    def __init__(self, date, store, credit, balance, debit, amount):
         self.date = date
         self.store = store
+        self.debit = debit
+        self.credit = credit
         self.amount = amount
         self.balance = balance
         self.uuid = uuid.uuid1()
 
-    def name(self):
-        return self.name
+    def __str__(self):
+        return "This transaction is " + self.date + " " + self.store + " " + self.credit + " " + " "
 
 
 class Store:
@@ -25,26 +27,76 @@ class Store:
         self.transactions.append(uuid)
 
 
-transaction_list = []
-store_list = {}
+def check_row_class(attr):
+    for each in attr:
+        if each[0] == 'class':
+            if str(each[1]).__contains__('transaction-row'):
+                return extract_date(attr)
+    return None
 
 
-def update(name, amount, uid):
-    store = store_list.get(name, None)
-    if store is None:
-        store = Store(name, 3)
-        store_list[name] = store
-    store.add_purchase(float(amount), uid)
+def extract_date(attributes):
+    for each in attributes:
+        if each[0] == 'id':
+            date = str(each[1])
+            return date
+    return None
+
+
+class MyHTMLParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.inside_table_body = False
+        self.inside_transaction_row = False
+        self.current_column = 0
+        self.date_column = True
+        self.current_transaction = None
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'tbody':
+            self.inside_table_body = True
+        if self.inside_table_body:
+            if tag == 'tr':
+                date = check_row_class(attrs)
+                if date is not None:
+                    self.current_transaction = Transaction(date, 0, 0, 0, 0, 0)
+                    self.inside_transaction_row = True
+        if self.inside_transaction_row:
+            if tag == 'td':
+                self.current_column = self.current_column + 1
+                self.date_column = True
+
+    def handle_endtag(self, tag):
+        if tag == 'tr':
+            if self.inside_transaction_row:
+                self.inside_transaction_row = False
+                self.date_column = False
+                self.current_column = 0
+                self.current_transaction = None
+
+    def handle_data(self, data):
+        if self.date_column:
+            data = str(data).strip()
+
+            # if self.current_column == 1:
+            #         self.current_transaction = Transaction(data, 0, 0, 0, 0, 0)
+            if self.current_column == 2:
+                self.current_transaction.store = data
+            if self.current_column == 3:
+                self.current_transaction.debit = data
+            if self.current_column == 4:
+                self.current_transaction.credit = data
+            if self.current_column == 5:
+                self.current_transaction.balance = data
+                print(self.current_transaction)
+        self.date_column = False
+
 
 def main():
-    with open('accountactivity.csv') as csvfile:
-        reader = csv.DictReader(csvfile)
-        spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
-        for row in spamreader:
-            print ','.join(row)
-            t = Transaction(row[0], row[1], row[2], row[4])
-            update(t.store, t.amount, t.uuid)
-            transaction_list.append(t)
+    filename = './table.html'
+    f = open(filename, "r").read()
+    parser = MyHTMLParser()
+    parser.feed(f)
 
 
 if __name__ == "__main__":

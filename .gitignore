@@ -1,6 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ./password.text
 =======
 .password.text
 .chromedriver
 >>>>>>> gitignore
+=======
+/chromedriver
+/password.text
+/table.html
+/.idea/
+/__pycache__/
+>>>>>>> Works pretty well now
