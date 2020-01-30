@@ -1,5 +1,6 @@
 import uuid
 from html.parser import HTMLParser
+import json
 
 
 class Transaction:
@@ -10,7 +11,6 @@ class Transaction:
         self.credit = credit
         self.amount = amount
         self.balance = balance
-        self.uuid = uuid.uuid1()
 
     def __str__(self):
         return "This transaction is " + self.date + " " + self.store + " " + self.credit + " " + " "
@@ -51,6 +51,7 @@ class MyHTMLParser(HTMLParser):
         self.current_column = 0
         self.date_column = True
         self.current_transaction = None
+        self.transactions = []
 
     def handle_starttag(self, tag, attrs):
         if tag == 'tbody':
@@ -72,6 +73,7 @@ class MyHTMLParser(HTMLParser):
                 self.inside_transaction_row = False
                 self.date_column = False
                 self.current_column = 0
+                self.transactions.append(self.current_transaction.__dict__)
                 self.current_transaction = None
 
     def handle_data(self, data):
@@ -97,7 +99,8 @@ def main():
     f = open(filename, "r").read()
     parser = MyHTMLParser()
     parser.feed(f)
-
+    with open('mytransactions.json', 'w') as f:
+        json.dump(parser.transactions, f)
 
 if __name__ == "__main__":
     main()
