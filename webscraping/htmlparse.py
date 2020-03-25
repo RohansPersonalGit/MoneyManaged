@@ -93,13 +93,18 @@ class MyHTMLParser(HTMLParser):
                 print(self.current_transaction)
         self.date_column = False
 
+    def feed_data(self, f, count):
+        self.feed(f)
+        with open('mytransactions{}.json'.format(count), 'w') as f:
+            json.dump(self.transactions, f)
 
 def main():
+    
     filename = './table.html'
     f = open(filename, "r").read()
     parser = MyHTMLParser()
     parser.feed(f)
-    with open('mytransactions.json', 'w') as f:
+    with open('../mytransactions.json', 'w') as f:
         json.dump(parser.transactions, f)
 
 if __name__ == "__main__":

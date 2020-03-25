@@ -8,8 +8,12 @@
 =======
 /chromedriver
 /password.text
-/table.html
+/htmlPracticeFiles/table.html
 /.idea/
 /__pycache__/
 >>>>>>> Works pretty well now
 /mytransactions.json
+/htmlPracticeFiles/
+/transactions/
+/.vscode/
+/config.py

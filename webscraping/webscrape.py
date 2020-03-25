@@ -1,5 +1,4 @@
-from webparser import  WebParser
-from webparser import  Account
+from webscraping.webparser import  WebParser
 
 
 def get_credentials(file_name, input_mapping):
@@ -11,10 +10,13 @@ def get_credentials(file_name, input_mapping):
 
 def main():
     input_mapping = {"username": '', "password": ''}
-    get_credentials('password.text',input_mapping)
+    get_credentials('../password.text', input_mapping)
     parser = WebParser(True)
     parser.login_td(input_mapping)
-    parser.get_info(Account.credit)
+    parser.choose_account('//a[contains(text(),"VISA CARD")]')
+    check = parser.click_download()
+    parser.click_next
+
 
 
 
