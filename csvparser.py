@@ -4,6 +4,8 @@ from uuid import UUID
 import os
 import json
 import re
+
+
 class Transaction:
     def __init__(self, date, store, credit, debit, balance):
         self.date = date
@@ -34,8 +36,8 @@ class Store:
     def __str__(self):
         return "I am a store named " + self.name + "You have spent " + str(self.spent)
 
-store_list = []
 
+store_list = []
 
 
 def update(name, amount, uid):
@@ -55,11 +57,16 @@ def update(name, amount, uid):
     if not found:
         if re.search('AMZN|Amazon', name) is not None:
             store = Store('Amazon')
-            store.add_purchase(float(amount),name)
+            store.add_purchase(float(amount), name)
         else:
+            if "'" in name:
+                print('hit')
+                name = name.replace("'", "''")
+                print(name + " how")
             store = Store(name)
             store.add_purchase(float(amount), uid)
         store_list.append(store.__dict__)
+
 
 def main():
     transaction_list = []
@@ -69,19 +76,22 @@ def main():
                 reader = csv.DictReader(csvfile)
                 spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
                 for row in spamreader:
-                    t = Transaction(row[0], row[1], row[2], row[3],row[4])
+                    t = Transaction(row[0], row[1], row[2], row[3], row[4])
                     if row[2] != '':
                         update(t.store, t.credit, t.uuid)
                     transaction_list.append(t.__dict__)
     i = 0
     for each in transaction_list:
         print(each)
-        i+=1
+        i += 1
     print(i)
     for each in store_list:
         print(each)
-    with open ('mytransactions.json', 'w') as f:
-        json.dump(transaction_list,f, cls=UUIDEncoder)
+    with open('mytransactions.json', 'w') as f:
+        json.dump(transaction_list, f, cls=UUIDEncoder)
+    with open('mystores.json', 'w') as f:
+        json.dump(store_list, f, cls=UUIDEncoder)
+
 
 class UUIDEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -90,5 +100,6 @@ class UUIDEncoder(json.JSONEncoder):
             return obj.hex
         return json.JSONEncoder.default(self, obj)
 
+
 if __name__ == "__main__":
-     main()
+    main()
