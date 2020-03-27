@@ -9,6 +9,10 @@ import re
 class Transaction:
     def __init__(self, date, store, credit, debit, balance):
         self.date = date
+        if "'" in store:
+            print('hit')
+            store = store.replace("'", "''")
+            print(store + " how")
         self.store = store
         self.debit = debit
         self.credit = credit
