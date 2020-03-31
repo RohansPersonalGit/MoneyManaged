@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/rohangarg/Developer/MoneysManaged/MoneysManaged/BarChart.swift">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Downloads/Charts-master/Charts.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "self:MoneysManaged.xcodeproj">
    </FileRef>
 </Workspace>
