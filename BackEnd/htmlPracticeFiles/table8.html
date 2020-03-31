@@ -1,0 +1,1415 @@
+<table id="transactionsTable" class="transactions-table-bottom transactions-table-border ng-isolate-scope td-table td-table-border-row td-table-border-column td-table-stripe-row" td-ui-table="rows" width="756px">
+    <thead>
+    <tr td-ui-row="0" ng-hide="hidden" class="ng-scope td-table-row-first td-table-row-last" scope-id="316" aria-hidden="false">
+        <th width="164px" scope="col" role="columnheader" td-ezw-transaction-data-table-aria-sort="vm.sorting.date.order" class="ng-isolate-scope ng-scope td-table-heading-top" td-ui-header="" aria-sort="ascending">
+            <a class="td-table-heading-sort" href="" ng-click="vm.sort('date')">
+            <span class="ng-binding">
+              Date
+              <img alt="" ng-src="bower_components/td-ui-evergreen/styles/td-evergreen/img/tables/sort-ascending.gif" src="bower_components/td-ui-evergreen/styles/td-evergreen/img/tables/sort-ascending.gif">
+            </span>
+            </a>
+        </th>
+        <th width="261px" class="contextual-help-container ng-isolate-scope ng-scope td-table-heading-top" scope="col" role="columnheader" td-ezw-transaction-data-table-aria-sort="vm.sorting.desc.order" td-ui-header="" aria-sort="none">
+            <a class="td-table-heading-sort" href="" ng-click="vm.sort('desc')">
+            <span class="ng-binding">
+              Transaction Description
+              <img alt="" ng-src="bower_components/td-ui-evergreen/styles/td-evergreen/img/tables/sort-unsorted.gif" src="bower_components/td-ui-evergreen/styles/td-evergreen/img/tables/sort-unsorted.gif">
+            </span>
+            </a>
+            <div class="contextual-help-icon contextual-help-content ng-isolate-scope" td-ui-contextual-help="" json-in="{&quot;metaData&quot;:{&quot;POSITION&quot;:&quot;upward&quot;,&quot;TARGET_ELEMENT&quot;:&quot;TRANS_DESC_HELP&quot;,&quot;GRID_SIZE&quot;:&quot;6&quot;,&quot;TRIGGER_TYPE&quot;:&quot;mouseover&quot;,&quot;OFFSET_X&quot;:&quot;0&quot;,&quot;OFFSET_Y&quot;:&quot;0&quot;},&quot;dynamicContent&quot;:&quot;<p>The transaction information has been provided by the merchant.</p>&quot;}" aria-haspopup="true" style="display: inline;">
+                <div id="TRANS_DESC_HELP" class="td-overlay td-layout-column td-callout td-callout-primary td-layout-grid6 td-cs-primary" td-ui-callout="primary" style="display: none; opacity: 0;"><a class="td-link-icon td-link-icon-close" href="#"></a>
+                    <div class="td-callout-heading">
+                        <br>
+                    </div>
+                    <div class="td-callout-content" td-ezw-summary-panel-bind-html-compile="vm.contextualHelp.TRANS_DESC_HELP.dynamicContent"><p class="ng-scope">The transaction information has been provided by the merchant.</p></div>
+                </div>
+                <a class="td-link-activeimageonhover td-link-nounderline td-link-overlay" href="#" onclick="return false;">
+                    <span class="td-link-icon td-link-icon-help">?</span>
+                    <span class="td-forscreenreader" aria-hidden="false"></span> </a>
+            </div>
+        </th>
+        <th width="111px" align="right" class="header-right ng-isolate-scope td-table-align-right ng-scope td-table-heading-top" scope="col" role="columnheader" td-ezw-transaction-data-table-aria-sort="vm.sorting.debit.order" td-ui-header="" aria-sort="none">
+            <a class="td-table-heading-sort" href="" ng-click="vm.sort('debit')">
+            <span class="ng-binding">
+              Debit
+              <img alt="" ng-src="bower_components/td-ui-evergreen/styles/td-evergreen/img/tables/sort-unsorted.gif" src="bower_components/td-ui-evergreen/styles/td-evergreen/img/tables/sort-unsorted.gif">
+            </span>
+            </a>
+        </th>
+        <th width="111px" align="right" class="header-right ng-isolate-scope td-table-align-right ng-scope td-table-heading-top" scope="col" role="columnheader" td-ezw-transaction-data-table-aria-sort="vm.sorting.credit.order" td-ui-header="" aria-sort="none">
+            <a class="td-table-heading-sort" href="" ng-click="vm.sort('credit')">
+            <span class="ng-binding">
+              Credit
+              <img alt="" ng-src="bower_components/td-ui-evergreen/styles/td-evergreen/img/tables/sort-unsorted.gif" src="bower_components/td-ui-evergreen/styles/td-evergreen/img/tables/sort-unsorted.gif">
+            </span>
+            </a>
+        </th>
+        <th width="109px" align="right" scope="col" role="columnheader" class="td-table-align-right ng-scope td-table-heading-top" td-ui-header="">
+            <span class="ng-binding">Balance</span>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- ngIf: vm.tableSettings.showAuthorizedHeader -->
+    <!-- ngRepeat: authorizedTransaction in vm.transactions.authorized track by $index -->
+
+    <!-- ngIf: vm.tableSettings.showPostedHeader || vm.tableSettings.showEmptyPostedMessage -->
+    <!-- ngIf: vm.tableSettings.showPostedHeader -->
+    <!-- ngIf: vm.tableSettings.showEmptyPostedMessage -->
+    <!-- ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-09~1836233" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0" style="">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 08, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 09, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            AMZN Mktp CA*1F6A49SD3
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city" style="">
+                WWW.AMAZON.CA
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                ON
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            85.99
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$513.03</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-09~1836223" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 08, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 09, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            AMZN Mktp CA*BG6J20AR3
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city" style="">
+                WWW.AMAZON.CA
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                ON
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            171.98
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$685.01</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-09~1836253" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 09, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 09, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            Amazon.ca*FN6D40SL3
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city" style="">
+                AMAZON.CA
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                ON
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            99.06
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$784.07</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-09~1836243" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0" style="">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 09, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 09, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            APPLE ONLINE STORE
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                800-676-2775
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                ON
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            28.00
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$812.07</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-10~1837463" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 09, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 10, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            CYCLEHOP CANADA
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                VANCOUVER
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            2.34
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$814.41</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-11~1839024" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 09, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 11, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            COWBOYS VAPE &amp; SMOKES
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                VANCOUVER
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            40.75
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$855.16</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-11~1839034" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 10, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 11, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            UBER EATS HELP.UBER.COM
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                Amsterdam
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            11.09
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$866.25</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-15~1927517" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 11, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 15, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            GALLERY
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                VANCOUVER
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            26.75
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$893.00</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-15~1927507" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 11, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 15, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            GALLERY
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                VANCOUVER
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            6.58
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$899.58</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-15~1927577" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 13, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 15, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            UPPER CASE
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                VANCOUVER
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            2.89
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$902.47</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-15~1927557" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 13, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 15, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            CYCLEHOP CANADA
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                VANCOUVER
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            3.26
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$905.73</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-15~1927547" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 13, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 15, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            CYCLEHOP CANADA
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                VANCOUVER
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            2.15
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$907.88</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-15~1927537" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 13, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 15, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            UBER EATS HELP.UBER.COM
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                Amsterdam
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            32.31
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$940.19</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-15~1927527" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 13, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 15, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            FAMOUS PLAYER 1422QPS
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                VANCOUVER
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            7.86
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$948.05</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-16~1840408" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 13, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 16, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            MIYAMAE SUSHI
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                VANCOUVER
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            12.55
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$960.60</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-15~1927587" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 14, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 15, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            UBER EATS HELP.UBER.COM
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                Amsterdam
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            10.11
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$970.71</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-15~1927567" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 14, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 15, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            DOORDASH*A&amp;W CANADA
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                DOWNTOWN TORO
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                ON
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            16.63
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$987.34</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-16~1840428" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 14, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 16, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            PIZZA HUT #31138
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                VANCOUVER
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            20.98
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$1,008.32</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-16~1840398" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 14, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 16, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            MAN CAVE BARBER SHOP
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                VANCOUVER
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            43.90
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$1,052.22</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-16~1840448" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 15, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 16, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            CYCLEHOP CANADA
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                VANCOUVER
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            2.00
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$1,054.22</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-16~1840438" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 15, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 16, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            UBER EATS HELP.UBER.COM
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                Amsterdam
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            18.47
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$1,072.69</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-16~1840418" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 15, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 16, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            Amazon.ca*QX05P2OB3
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                AMAZON.CA
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                ON
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            9.60
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$1,082.29</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-17~1849120" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 16, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 17, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            PAYMENT - THANK YOU
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">700.00</td>
+        <td align="right" class="ng-binding td-table-align-right">$382.29</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-17~1849110" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 16, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 17, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            GROCERY CHECKOUT
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                VANCOUVER
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            1.56
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$383.85</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index --><tr ng-repeat="postedTransaction in vm.transactions.posted track by $index" id="pt_2019-09-18~2019-10-17~1849100" class="transaction-row ng-scope" ng-click="vm.showDetails('pt_'+postedTransaction.transactionId)" role="button" tabindex="0">
+        <td class="ng-binding">
+            <a href="" class="td-link-toggle">
+            <span ng-class="(vm.show['pt_' + postedTransaction.transactionId]) ? 'td-triggericon td-triggericon-expanded' : 'td-triggericon'" title="Expand for more details" class="td-triggericon">
+            </span>
+            </a>
+            Oct 16, 2019
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]  &amp;&amp; postedTransaction.postedDt &amp;&amp; !postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Oct 17, 2019</div>
+            </div>
+            <div class="posted-date-container transaction-details-container ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId] &amp;&amp; postedTransaction.pendingPaymentTransaction" aria-hidden="true">
+                <div class="small posted-date-title ng-binding">Posted Date</div>
+                <div class="posted-transaction-date ng-binding">Pending</div>
+            </div>
+        </td>
+        <td class="ng-binding">
+            UBER EATS HELP.UBER.COM
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <!-- ngIf: postedTransaction.merchant.city --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.city">
+                Amsterdam
+            </div><!-- end ngIf: postedTransaction.merchant.city -->
+                <!-- ngIf: postedTransaction.merchant.territory --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.territory">
+                BC
+            </div><!-- end ngIf: postedTransaction.merchant.territory -->
+                <!-- ngIf: postedTransaction.merchant.country --><div class="small ng-binding ng-scope" ng-if="postedTransaction.merchant.country">
+                CA
+            </div><!-- end ngIf: postedTransaction.merchant.country -->
+
+                <!-- ngRepeat: disclaimer in postedTransaction.disclaimers -->
+                <div class="small details-element-container ng-binding">
+                    452034******9013
+                </div>
+                <!-- ngIf: postedTransaction.enhancedTransactionDescFlag -->
+                <div class="details-element-container print-button" ng-show="postedTransaction.postedDt || postedTransaction.pendingPaymentTransaction" aria-hidden="false">
+                    &nbsp;
+                    <a href="" ng-click="vm.printStatement($event, postedTransaction.transactionId, 'pt')" class="ng-binding">Print</a>
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right">
+            <!-- ngIf: postedTransaction.fxIndicator -->
+            10.92
+            <div class="transaction-details-container animate-show ng-hide" ng-show="vm.show['pt_'+postedTransaction.transactionId]" aria-hidden="true">
+                <div ng-show="postedTransaction.postedDt" class="small td-sub-copy td-copy-gray exchange-info-title ng-binding" aria-hidden="false">
+
+                    <span ng-show="postedTransaction.sourceAmt" ng-bind="postedTransaction.sourceAmt.amt | ezwLocaleFormatterCurrency:{currencyCode: postedTransaction.sourceCurrency , hideSymbol:true}" class="ng-binding ng-hide" aria-hidden="true"></span>
+                    <span ng-show="postedTransaction.exchangeRate" class="ng-binding ng-hide" aria-hidden="true"> converted at </span>
+
+                </div>
+            </div>
+        </td>
+        <td align="right" class="ng-binding td-table-align-right"></td>
+        <td align="right" class="ng-binding td-table-align-right">$394.77</td>
+    </tr><!-- end ngRepeat: postedTransaction in vm.transactions.posted track by $index -->
+    <!-- ngIf: vm.tableSettings.showNoAccountActivityMessage -->
+    <!-- ngIf: vm.tableSettings.showNoAccountActivityNotCurrCycle -->
+    <!-- ngIf: vm.tableSettings.showTotal --><tr total="right" ng-if="vm.tableSettings.showTotal" class="ng-scope" style="">
+        <td colspan="2" class="ng-binding td-table-total-cell td-table-align-right">Total</td>
+        <td align="right" class="ng-binding td-table-align-right td-table-total-cell">$1,975.30</td>
+        <td align="right" class="ng-binding td-table-align-right td-table-total-cell">$1,556.80</td>
+        <td class="td-table-total-cell td-table-align-right"></td>
+    </tr><!-- end ngIf: vm.tableSettings.showTotal -->
+    </tbody>
+</table>

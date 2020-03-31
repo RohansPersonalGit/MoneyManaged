@@ -1,0 +1,13 @@
+username = 'Roho'
+password = 'gar123hon'
+host = 'moneymanagedtest.cv159htoce4w.us-east-2.rds.amazonaws.com'
+transaction_table = "TRANSACTIONS"
+store_table_name = 'STORES'
+name_field = "NAME"
+spent_field = "SPENT"
+table_uuid = "UUID"
+store_category = "CATEGORY"
+transaction_date = 'DATE'
+transaction_amount = 'AMOUNT'
+transaction_table_foreign_key = "STOREUUID"
+category_table = "CATEGORIES"
