@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				9EC164DC243070D400F7DF6E /* Charts.xcodeproj */,
-				9EC164A124306D0E00F7DF6E /* MoneysManaged */,
+				9EC164A124306D0E00F7DF6E /* MoneysManagedFrontEnd */,
 				9EC164A024306D0E00F7DF6E /* Products */,
 				9EC164D824306F8E00F7DF6E /* Frameworks */,
 			);
@@ -98,7 +98,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9EC164A124306D0E00F7DF6E /* MoneysManaged */ = {
+		9EC164A124306D0E00F7DF6E /* MoneysManagedFrontEnd */ = {
 			isa = PBXGroup;
 			children = (
 				9EC164CD24306F2A00F7DF6E /* BarChart.swift */,
@@ -113,7 +113,7 @@
 				9EC164AD24306D0E00F7DF6E /* MoneysManaged.xcdatamodeld */,
 				9E8B2A27243130B50040651C /* ChartData.swift */,
 			);
-			path = MoneysManaged;
+			path = MoneysManagedFrontEnd;
 			sourceTree = "<group>";
 		};
 		9EC164D824306F8E00F7DF6E /* Frameworks */ = {
