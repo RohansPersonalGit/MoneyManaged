@@ -8,78 +8,58 @@
 
 import UIKit
 import Charts
+
 protocol GetChartData {
-    func getChartData(with dataPOints: [String], values: [String])
+    func getChartData(with dataPoints: [String], values: [String])
     var duration: [String] {get set}
     var amount: [String] {get set}
 }
-class FirstViewController: UIViewController,  GetChartData {
-    func getChartData(with dataPOints: [String], values: [String]) {
-        self.duration = dataPOints
+
+class FirstViewController: UIViewController,  GetChartData, UIScrollViewDelegate {
+    func getChartData(with dataPoints: [String], values: [String]) {
+        self.duration = dataPoints
         self.amount = values
     }
+    
     private var request: AnyObject?
     var duration: [String] = []
-    
     var amount: [String] = []
-   var chartView: BarChart!
-    
+    var chartView: BarChart!
+        
     @IBOutlet weak var scrollChartContainer: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         populateChartData()
-        fetchStoreData()
         barChart()
-        print("d")
     }
 
     func populateChartData(){
         duration = []
         amount = []
-//        self.getChartData(with: duration, values: amount)
+        fetchStoreData()
     }
     
-    func barChart(){
-        let heights = self.view.frame.height - (self.tabBarController?.tabBar.frame.height ?? 0.0)
-        let barChart = BarChart(frame: CGRect(x:0.0, y:0.0, width: (self.view.frame.width*2), height: heights))
-        barChart.delegate = self
-        self.chartView = barChart
-        //we need to set a way to make extra
-        scrollChartContainer.addSubview(self.chartView)
-    }
-
-}
-
-public class ChartFormatter: NSObject, IAxisValueFormatter {
-    var duration = [String]()
-    
-    public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        return duration[Int(value)]
-    }
-    
-    public func setValues(values: [String]){
-        self.duration = values
-    }
-    
-}
-
-private extension FirstViewController {
     func configureUI(with stores: [Store]){
-        print("configuring")
         for each in 0...10{
             duration.append(stores[each].name ??  "NA")
             amount.append(stores[each].spent?.description ?? "50")
-            print(stores[each])
         }
-        print(duration[0])
         self.getChartData(with: duration, values: amount)
         self.chartView.setBarChart(dataPoints: duration, values: amount)
-        print(duration[0])
-        
     }
+    
+    func barChart(){
+        let barChart = BarChart(frame: CGRect(x:0.0, y:0.0, width: (self.view.frame.width*4), height:self.scrollChartContainer.frame.height))
+        barChart.delegate = self
+        self.chartView = barChart
+        scrollChartContainer.delegate = self
+        scrollChartContainer.contentSize = CGSize.init(width: chartView.frame.width, height: chartView.frame.height)
+        scrollChartContainer.addSubview(self.chartView)
+    }
+}
+
+private extension FirstViewController {
     func fetchStoreData(){
         let storeRequest = ApiRequest(resource: StoresResource())
         request = storeRequest

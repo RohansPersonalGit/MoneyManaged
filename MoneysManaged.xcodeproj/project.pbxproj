@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E6064FA2433E4F6000CD17E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6064F92433E4F6000CD17E /* Default-568h@2x.png */; };
+		9E6065002434286F000CD17E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6064FF2434286F000CD17E /* NetworkClient.swift */; };
 		9E8B2A28243130B50040651C /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B2A27243130B50040651C /* ChartData.swift */; };
 		9EC164A324306D0E00F7DF6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC164A224306D0E00F7DF6E /* AppDelegate.swift */; };
 		9EC164A524306D0E00F7DF6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC164A424306D0E00F7DF6E /* SceneDelegate.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		9E6064F92433E4F6000CD17E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9E6064FF2434286F000CD17E /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		9E8B2A27243130B50040651C /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
 		9EC1649F24306D0E00F7DF6E /* MoneysManaged.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneysManaged.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC164A224306D0E00F7DF6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		9EC164A124306D0E00F7DF6E /* MoneysManaged */ = {
 			isa = PBXGroup;
 			children = (
+				9E6064FF2434286F000CD17E /* NetworkClient.swift */,
 				9EC164CD24306F2A00F7DF6E /* BarChart.swift */,
 				9EC164A224306D0E00F7DF6E /* AppDelegate.swift */,
 				9EC164A424306D0E00F7DF6E /* SceneDelegate.swift */,
@@ -238,6 +241,7 @@
 				9E8B2A28243130B50040651C /* ChartData.swift in Sources */,
 				9EC164CE24306F2A00F7DF6E /* BarChart.swift in Sources */,
 				9EC164A524306D0E00F7DF6E /* SceneDelegate.swift in Sources */,
+				9E6065002434286F000CD17E /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
