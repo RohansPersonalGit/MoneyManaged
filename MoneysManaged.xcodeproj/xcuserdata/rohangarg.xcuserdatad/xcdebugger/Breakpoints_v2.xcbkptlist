@@ -23,22 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "962B790C-8822-484E-9044-AA6D7828A7E4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MoneysManaged/BarChart.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "populateData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "241CBB5E-9C22-48B6-BA57-0240BCA3D4D1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -71,22 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "106C38A6-1492-4697-B311-D2D644912120"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MoneysManaged/BarChart.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "populateData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "EE30A6A2-BE7F-4644-9DDD-61FDE0F8075D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -114,6 +82,69 @@
             endingLineNumber = "34"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5C2DAFB-DFA5-4BD8-889A-69EB63BCC77C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoneysManaged/BarChart.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "barChartView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A5C2DAFB-DFA5-4BD8-889A-69EB63BCC77C - 8ac4d873bee0b01e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoneysManaged.BarChart.barChartView.getter : Charts.BarChartView"
+                  moduleName = "MoneysManaged"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rohangarg/Developer/MoneysManaged/MoneysManaged/BarChart.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "A5C2DAFB-DFA5-4BD8-889A-69EB63BCC77C - b8636c1cf2e73f78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoneysManaged.BarChart.init(frame: __C.CGRect) -&gt; MoneysManaged.BarChart"
+                  moduleName = "MoneysManaged"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rohangarg/Developer/MoneysManaged/MoneysManaged/BarChart.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "217">
+               </Location>
+               <Location
+                  uuid = "A5C2DAFB-DFA5-4BD8-889A-69EB63BCC77C - ecf04b789a7e2ce4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoneysManaged.BarChart.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MoneysManaged.BarChart&gt;"
+                  moduleName = "MoneysManaged"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rohangarg/Developer/MoneysManaged/MoneysManaged/BarChart.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "230">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

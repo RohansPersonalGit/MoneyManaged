@@ -13,7 +13,7 @@ class BarChart: UIView {
 let barChartView = BarChartView()
     var dataEntry: [BarChartDataEntry] = []
     
-    var stores = [String]()
+    var duration = [String]()
     var amount = [String]()
     
     var delegate: GetChartData!{
@@ -23,11 +23,11 @@ let barChartView = BarChartView()
         }
     }
     func populateData(){
-        stores = delegate.stores
+        duration = delegate.duration
         amount = delegate.amount
     }
     func reloadData(){
-         setBarChart(dataPoints: stores, values: amount)
+         setBarChart(dataPoints: duration, values: amount)
     }
     func barChartSetUp(){
         self.backgroundColor = UIColor.init(displayP3Red: 240, green: 235, blue: 214, alpha: 0)
@@ -38,7 +38,7 @@ let barChartView = BarChartView()
         barChartView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         barChartView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInBounce)
-        setBarChart(dataPoints: stores, values: amount)
+        setBarChart(dataPoints: duration, values: amount)
     }
 
     func setBarChart(dataPoints: [String], values: [String]) {
